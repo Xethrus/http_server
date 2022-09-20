@@ -9,7 +9,7 @@
 #include <cstring>
 //macro
 #define PORT 8080
-class Request(std::string unparsed_request) {
+class Request {
 	private:
 		std::string the_request;
 	public:
@@ -26,7 +26,7 @@ class Request(std::string unparsed_request) {
 			
 		}	
 }
-class response(std::string parsed_request) {
+class response {
 	public:
 		bool Recieved() {
 			if(parsed_reqeust ==  NULL) {
