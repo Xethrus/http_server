@@ -13,22 +13,21 @@ class Request {
 	private:
 		std::string the_request;
 	public:
-		std::string Get() {
+		std::string get_request() {
 			return the_request; 
 		}
-		void Set(std::string new_request) {
+		void set_request(std::string new_request) {
 			the_request = new_request;
 		}
-		Request() {
-			the_request = unparsed_request;
-		}
-		std::string Parse(){
-			
-		}	
-}
+		static request_object &parse_from_buffer(std::string& buffer) {
+			request_object *object = new request_object();
+			object->buffer = buffer;
+			return *object;
+		} 								
+};
 class response {
 	public:
-		bool Recieved() {
+		bool recieved_request() {
 			if(parsed_reqeust ==  NULL) {
 				return false;
 			} else {
